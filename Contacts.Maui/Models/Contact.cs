@@ -8,4 +8,6 @@ public class Contact
     public required string Name { get; set; }
     [EmailAddress]
     public required string Email { get; set; }
+    public string? Phone { get; set; }
+    public string? Address { get; set; }
 }

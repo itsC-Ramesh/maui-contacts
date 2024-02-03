@@ -6,11 +6,11 @@ public static class ContactRepository
 
     private static readonly List<Contact> _contacts =
     [
-        new() { Name = "John Doe", Email = "John@mail.com" },
-        new() { Name = "Jane Kong", Email = "Jane@mail.com" },
-        new() { Name = "Ash Grover", Email = "ash@mail.com" },
-        new() { Name = "Peter Kevinson", Email = "peter@mail.com" },
-        new() { Name = "Tom Cruise", Email = "tom@mail.com" },
+        new() { Id = 1, Name = "Jane Kong", Email = "Jane@mail.com" },
+        new() { Id = 2, Name = "Ash Grover", Email = "ash@mail.com" },
+        new() { Id = 3, Name = "Peter Kevinson", Email = "peter@mail.com" },
+        new() { Id = 4, Name = "John Doe", Email = "John@mail.com" },
+        new() { Id = 5, Name = "Tom Cruise", Email = "tom@mail.com" },
     ];
 
     #endregion
@@ -29,6 +29,8 @@ public static class ContactRepository
         if (existingContact == null) return false;
         existingContact.Name = contact.Name;
         existingContact.Email = contact.Email;
+        existingContact.Phone = contact.Phone;
+        existingContact.Address = contact.Address;
         return true;
     }
     public static void AddContact(Contact contact) => _contacts.Add(contact);

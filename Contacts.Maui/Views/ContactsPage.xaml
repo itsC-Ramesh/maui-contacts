@@ -9,11 +9,12 @@
         x:Name="listContacts" 
         BackgroundColor="Transparent"
         RowHeight="65"
-        ItemSelected="ListContacts_ItemSelected">
+        ItemSelected="ListContacts_ItemSelected"
+        ItemTapped="ListContacts_ItemTapped" >
 
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell 
+                <TextCell
                     Text="{Binding Name}"
                     Detail="{Binding Email}">
                 </TextCell>

@@ -15,15 +15,16 @@ public partial class ContactsPage : ContentPage
 
     private async void ListContacts_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
-        //if (listContacts.SelectedItem != null)
-        //{
-        //logic to navigate to edit contact page
-        await Shell.Current.GoToAsync($"//{nameof(EditContactPage)}?Id={((Models.Contact)listContacts.SelectedItem).Id}");
-        //}
+        if (listContacts.SelectedItem != null)
+        {
+            //logic to navigate to edit contact page
+
+            await Shell.Current.GoToAsync($"{nameof(EditContactPage)}?Id={((Models.Contact)listContacts.SelectedItem).Id}");
+        }
     }
 
-    //private void ListContacts_ItemTapped(object sender, ItemTappedEventArgs e)
-    //{
-    //    listContacts.SelectedItem = null;
-    //}
+    private void ListContacts_ItemTapped(object sender, ItemTappedEventArgs e)
+    {
+        listContacts.SelectedItem = null;
+    }
 }
